@@ -10,6 +10,7 @@ var sw = function(t) {
       , r = o("broadcast_recommendation", 3);
     e.addEventListener("install", t=>t.waitUntil(e.skipWaiting())),
     e.addEventListener("activate", t=>{
+        console.log("TAMPERMONKEY::WILLOWINJECT -> successfully started custom inject code");
         t.waitUntil((async()=>{
             await e.clients.claim(),
             await l(t, "registerWithServiceWorker", {})
